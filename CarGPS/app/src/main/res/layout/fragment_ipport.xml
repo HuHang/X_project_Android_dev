@@ -1,0 +1,71 @@
+<com.cztek.concept.cargps.layout.FractionTranslateLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fbf2f2"
+    tools:context="com.cztek.concept.cargps.activities.login.fragment.IPPortFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/horizontal_margin2"
+        android:layout_marginRight="@dimen/horizontal_margin2"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="@string/ip"/>
+            <EditText
+                android:id="@+id/ipEditText"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/editText_defaultHeight"
+                android:layout_weight="0.8"
+                style="@style/EditText"
+                android:textColor="@color/viewBackground"
+                android:background="@drawable/style_edit_text"
+                android:hint="@string/ipHint"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/horizontal_margin3"
+            android:weightSum="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="@string/port"/>
+            <EditText
+                android:id="@+id/porteditText"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/editText_defaultHeight"
+                android:layout_weight="0.8"
+                style="@style/EditText"
+                android:textColor="@color/viewBackground"
+                android:background="@drawable/style_edit_text"
+                android:hint="@string/portHint"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/confirmButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_defaultHeight"
+            android:layout_marginLeft="@dimen/horizontal_margin5"
+            android:layout_marginRight="@dimen/horizontal_margin5"
+            android:layout_marginTop="@dimen/horizontal_margin5"
+            android:background="@drawable/style_button"
+            android:textColor="@color/textWhite"
+            android:text="@string/save" />
+
+    </LinearLayout>
+
+</com.cztek.concept.cargps.layout.FractionTranslateLayout>

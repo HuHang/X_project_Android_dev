@@ -1,0 +1,39 @@
+<resources>
+    <dimen name="fragment_horizontal_margin">16dp</dimen>
+
+    <dimen name="horizontal_margin0">2dp</dimen>
+    <dimen name="horizontal_margin1">10dp</dimen>
+    <dimen name="horizontal_margin2">20dp</dimen>
+    <dimen name="horizontal_margin3">30dp</dimen>
+    <dimen name="horizontal_margin5">50dp</dimen>
+
+    <dimen name="default_marginTop">10dp</dimen>
+    <dimen name="item_default_marginTop">4dp</dimen>
+
+    <dimen name="editText_defaultHeight">42dp</dimen>
+    <dimen name="editText_radius">21dp</dimen>
+
+    <dimen name="segmentHeight">44dp</dimen>
+    <dimen name="item_defaultHeight">90dp</dimen>
+
+    <dimen name="button_defaultHeight">44dp</dimen>
+    <dimen name="button_smallHeight">36dp</dimen>
+    <dimen name="button_radius">22dp</dimen>
+
+    <dimen name="pswRadioButtonSize">18dp</dimen>
+    <dimen name="pswRadioButtonStroke">2dp</dimen>
+
+    <dimen name="clickItemDefaultHeight">14dp</dimen>
+    <dimen name="itemImageDefaultSize">26dp</dimen>
+    <dimen name="itemImageMiddleSize">40dp</dimen>
+
+    <dimen name="headerDefaultHeight">140dp</dimen>
+
+    <dimen name="text1">20sp</dimen>
+    <dimen name="text2">18sp</dimen>
+    <dimen name="text3">16sp</dimen>
+    <dimen name="text4">14sp</dimen>
+    <dimen name="text5">12sp</dimen>
+
+
+</resources>
