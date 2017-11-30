@@ -13,6 +13,7 @@ public class GlobalVariables {
     public final static String serverIp = "serverIp";
     public final static String serverPort = "serverPort";
     public final static String serverURL = "serverUrl";
+    public final static String basic_auth = "Basic_Auth";
 
     //user_info
     public final static String infoSp = "infoSp";

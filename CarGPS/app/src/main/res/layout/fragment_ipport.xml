@@ -5,13 +5,22 @@
     android:background="#fbf2f2"
     tools:context="com.cztek.concept.cargps.activities.login.fragment.IPPortFragment">
 
+    <ImageView
+        android:id="@+id/cancelImageButton"
+        android:layout_width="@dimen/itemImageDefaultSize"
+        android:layout_height="@dimen/itemImageDefaultSize"
+        android:layout_marginLeft="@dimen/horizontal_margin1"
+        android:layout_marginTop="@dimen/horizontal_margin1"
+        android:src="@mipmap/icon_cancel_red"
+        android:background="@color/transparent"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginLeft="@dimen/horizontal_margin2"
         android:layout_marginRight="@dimen/horizontal_margin2"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:clickable="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +37,7 @@
                 android:layout_height="@dimen/editText_defaultHeight"
                 android:layout_weight="0.8"
                 style="@style/EditText"
-                android:textColor="@color/viewBackground"
+                android:textColor="@color/text1"
                 android:background="@drawable/style_edit_text"
                 android:hint="@string/ipHint"/>
         </LinearLayout>
@@ -50,7 +59,7 @@
                 android:layout_height="@dimen/editText_defaultHeight"
                 android:layout_weight="0.8"
                 style="@style/EditText"
-                android:textColor="@color/viewBackground"
+                android:textColor="@color/text1"
                 android:background="@drawable/style_edit_text"
                 android:hint="@string/portHint"/>
         </LinearLayout>

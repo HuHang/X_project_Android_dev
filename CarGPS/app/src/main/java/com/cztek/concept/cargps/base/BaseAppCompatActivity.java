@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
 import com.cztek.concept.cargps.backHandlerHelper.BackHandlerHelper;
+import com.cztek.concept.cargps.http.HttpClient;
 
 /**
  * Created by HH
@@ -49,6 +50,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity{
 
     protected void init(){
         this.setTitle("");
+        HttpClient.init(this.getApplicationContext(),false);
 //        Bundle bundle = getIntent().getExtras();
 //        if (bundle != null){
 //            mToolbarTitle = bundle.getString(GlobalVariables.TOOLBAR_TITLE);

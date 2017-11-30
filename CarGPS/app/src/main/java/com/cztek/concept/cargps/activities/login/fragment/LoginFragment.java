@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.cztek.concept.cargps.R;
 import com.cztek.concept.cargps.base.BaseFragment;
+import com.cztek.concept.cargps.http.HttpClient;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -82,6 +83,8 @@ public class LoginFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.loginButton:
+                HttpClient.init(getContext().getApplicationContext(),true);
+
                 if (onButtonClick != null){
                     onButtonClick.onLoginButtonClick();
                 }
