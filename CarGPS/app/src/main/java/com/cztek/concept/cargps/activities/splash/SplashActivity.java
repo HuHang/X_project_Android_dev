@@ -3,9 +3,12 @@ package com.cztek.concept.cargps.activities.splash;
 import android.content.Intent;
 import android.os.Handler;
 
+import com.blankj.utilcode.util.StringUtils;
 import com.cztek.concept.cargps.R;
 import com.cztek.concept.cargps.activities.login.activity.LoginActivity;
 import com.cztek.concept.cargps.base.BaseAppCompatActivity;
+import com.vondear.rxtools.RxSPTool;
+import com.vondear.rxtools.view.ticker.RxTickerUtils;
 
 public class SplashActivity extends BaseAppCompatActivity {
 
@@ -29,6 +32,8 @@ public class SplashActivity extends BaseAppCompatActivity {
         super.setUpData();
         startMainActivity();
     }
+
+
     private void startMainActivity(){
         new Handler().postDelayed(new Runnable() {
             @Override
