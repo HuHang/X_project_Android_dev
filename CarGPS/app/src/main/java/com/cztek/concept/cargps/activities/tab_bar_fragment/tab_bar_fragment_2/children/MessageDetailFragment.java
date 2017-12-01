@@ -207,6 +207,7 @@ public class MessageDetailFragment extends BaseFragment {
                 messageDetailAdapter.notifyDataSetChanged();
                 recyclerView.loadMoreFinish(response.isEmpty(), !response.isEmpty());
             }
+            
 
             @Override
             public void OnFailure(String message) {

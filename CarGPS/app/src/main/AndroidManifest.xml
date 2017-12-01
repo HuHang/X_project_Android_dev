@@ -29,7 +29,8 @@
         </activity>
         <activity android:name=".activities.login.activity.LoginActivity" />
         <activity android:name=".activities.tab_bar_fragment.MainActivity" />
-        <activity android:name=".activities.tab_bar_fragment.tab_bar_fragment_2.children.MessageDetailActivity"></activity>
+        <activity android:name=".activities.tab_bar_fragment.tab_bar_fragment_2.children.MessageDetailActivity" />
+        <activity android:name=".activities.shop.ShopActivity"></activity>
     </application>
 
 </manifest>

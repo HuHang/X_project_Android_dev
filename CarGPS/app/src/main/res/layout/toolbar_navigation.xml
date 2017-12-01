@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:theme="@style/Theme.AppCompat"
+    app:contentInsetStart="0dp"
+    android:background="@color/colorPrimary"
+    android:gravity="center_vertical"
+    android:paddingLeft="@dimen/horizontal_margin1"
+    android:paddingRight="@dimen/horizontal_margin1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left">
+            <ImageView
+                android:id="@+id/toolbar_leftImage"
+                android:maxWidth="@dimen/itemImageDefaultSize"
+                android:maxHeight="@dimen/itemImageDefaultSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/toolbar_leftTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text3"
+                android:layout_marginLeft="@dimen/horizontal_margin1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text1"
+                android:layout_marginLeft="@dimen/horizontal_margin1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right">
+            <ImageView
+                android:id="@+id/toolbar_rightImage"
+                android:maxWidth="@dimen/itemImageDefaultSize"
+                android:maxHeight="@dimen/itemImageDefaultSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/toolbar_rightTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text3"
+                android:layout_marginLeft="@dimen/horizontal_margin1"/>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.Toolbar>

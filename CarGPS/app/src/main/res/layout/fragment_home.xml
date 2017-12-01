@@ -6,7 +6,42 @@
     android:orientation="vertical"
     tools:context="com.cztek.concept.cargps.activities.tab_bar_fragment.tab_bar_fragment_1.main.HomeFragment">
 
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar_home"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/functionHeaderViewHeight"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:id="@+id/toMonitorImageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:padding="@dimen/horizontal_margin1"
+            android:src="@mipmap/icon_home_monitor"
+            android:focusable="true" />
+        <ImageView
+            android:id="@+id/toCarImageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:padding="@dimen/horizontal_margin1"
+            android:src="@mipmap/icon_home_car"
+            android:focusable="true" />
+        <ImageView
+            android:id="@+id/toDeviceImageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:padding="@dimen/horizontal_margin1"
+            android:src="@mipmap/icon_home_device"
+            android:focusable="true" />
+
+    </LinearLayout>
 
     <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
         android:id="@+id/recyclerView"

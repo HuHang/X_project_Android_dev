@@ -30,6 +30,9 @@
     <dimen name="swipeMenuWidthMiddle">100dp</dimen>
 
     <dimen name="headerDefaultHeight">140dp</dimen>
+    
+    <dimen name="functionHeaderViewHeight">95dp</dimen>
+    <dimen name="moreFuncationViewHeight">70dp</dimen>
 
     <dimen name="text1">20sp</dimen>
     <dimen name="text2">18sp</dimen>
