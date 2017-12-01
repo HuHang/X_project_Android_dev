@@ -1,5 +1,6 @@
 package com.cztek.concept.cargps.http;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
@@ -8,19 +9,18 @@ import com.blankj.utilcode.util.EncodeUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.cztek.concept.cargps.constants.GlobalVariables;
 import com.tamic.novate.Novate;
-import com.vondear.rxtools.RxEncodeTool;
+import com.tamic.novate.callback.ResponseCallback;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import okhttp3.Credentials;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 /**
  * Created by charlot
@@ -28,6 +28,7 @@ import okhttp3.Response;
  */
 
 public class HttpClient {
+    @SuppressLint("StaticFieldLeak")
     private static Novate mNovate = null;
 
     public static void init(Context context, boolean reInit) {
@@ -65,10 +66,10 @@ public class HttpClient {
             };
             builder.interceptors().clear();
             builder.addInterceptor(headerInterceptor);
-            builder.connectTimeout(15, TimeUnit.SECONDS);
-            builder.readTimeout(20, TimeUnit.SECONDS);
-            builder.writeTimeout(20, TimeUnit.SECONDS);
-            builder.retryOnConnectionFailure(true);
+            builder.connectTimeout(60, TimeUnit.SECONDS);
+            builder.readTimeout(60, TimeUnit.SECONDS);
+            builder.writeTimeout(60, TimeUnit.SECONDS);
+//            builder.retryOnConnectionFailure(true);
 
             OkHttpClient okHttpClient = builder.build();
 
@@ -95,9 +96,9 @@ public class HttpClient {
         return mNovate;
     }
 
-    public static <T> void  get(String url, HttpCallback<T> httpCallback){
+    public static <T> void  get(String url, ResponseCallback<T, ResponseBody> callBack){
         ApiService apiService = mNovate.create(ApiService.class);
-        mNovate.call(apiService.executeGet(url),httpCallback);
+        mNovate.call(apiService.executeGet(url),callBack);
     }
 
     public static <T> void get(String url, Map<String,Object> params, HttpCallback<T> httpCallback){

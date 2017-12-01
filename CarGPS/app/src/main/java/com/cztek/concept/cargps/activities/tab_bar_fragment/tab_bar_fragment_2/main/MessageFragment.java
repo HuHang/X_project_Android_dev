@@ -1,20 +1,26 @@
 package com.cztek.concept.cargps.activities.tab_bar_fragment.tab_bar_fragment_2.main;
 
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
+import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.cztek.concept.cargps.R;
 import com.cztek.concept.cargps.activities.tab_bar_fragment.tab_bar_fragment_2.adapter.MessageTypeAdapter;
 import com.cztek.concept.cargps.activities.tab_bar_fragment.tab_bar_fragment_2.bean.MessageTypeBean;
+import com.cztek.concept.cargps.activities.tab_bar_fragment.tab_bar_fragment_2.children.MessageDetailActivity;
 import com.cztek.concept.cargps.base.BaseFragment;
 import com.cztek.concept.cargps.http.ApiStore;
-import com.cztek.concept.cargps.http.HttpCallback;
 import com.cztek.concept.cargps.http.HttpClient;
+import com.cztek.concept.cargps.http.HttpListCallback;
+import com.cztek.concept.cargps.third.HUDProgressManager;
+import com.kaopiz.kprogresshud.KProgressHUD;
+import com.yanzhenjie.recyclerview.swipe.SwipeItemClickListener;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 
 import java.util.ArrayList;
@@ -23,8 +29,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import okhttp3.Call;
-import okhttp3.ResponseBody;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,6 +45,8 @@ public class MessageFragment extends BaseFragment {
     Unbinder unbinder;
 
     private Handler handler;
+    KProgressHUD kProgressHUD;
+
 
     private List<MessageTypeBean> messageTypeBeanList;
     private MessageTypeAdapter messageTypeAdapter;
@@ -61,7 +67,19 @@ public class MessageFragment extends BaseFragment {
                     break;
             }
 
+        }
+    };
 
+    private SwipeItemClickListener swipeItemClickListener = new SwipeItemClickListener() {
+        @Override
+        public void onItemClick(View itemView, int position) {
+            Log.i("hahahha","214314");
+            MessageTypeBean messageTypeBean = messageTypeBeanList.get(position);
+            Intent intent  = new Intent();
+            intent.setClass(getMContext(),MessageDetailActivity.class);
+            intent.putExtra("MessageTypeName",messageTypeBean.getKeyStr());
+            intent.putExtra("MessageTypeID",String.valueOf(messageTypeBean.getKeyValue()));
+            startActivity(intent);
         }
     };
 
@@ -75,10 +93,11 @@ public class MessageFragment extends BaseFragment {
         super.init();
         unbinder = ButterKnife.bind(this, getContentView());
         messageTypeBeanList = new ArrayList<>();
-        messageTypeAdapter = new MessageTypeAdapter(getMContext(),messageTypeBeanList);
+        messageTypeAdapter = new MessageTypeAdapter(getMContext(), messageTypeBeanList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getMContext()));
         recyclerView.setHasFixedSize(true);
         handler = new Handler();
+        kProgressHUD = new HUDProgressManager().showLoadingImage(getMContext());
 
     }
 
@@ -87,7 +106,9 @@ public class MessageFragment extends BaseFragment {
         super.setUpView();
         toolbarTitle.setText("消息");
         segmentControlRG.setOnCheckedChangeListener(onCheckedChangeListener);
+        recyclerView.setSwipeItemClickListener(swipeItemClickListener);
         recyclerView.setAdapter(messageTypeAdapter);
+
     }
 
     @Override
@@ -103,55 +124,52 @@ public class MessageFragment extends BaseFragment {
     }
 
     private void callHttpForAllMessageTypeList() {
-        HttpClient.get(ApiStore.getMessageTypeList_url, new HttpCallback<List<MessageTypeBean>>() {
+        HttpClient.get(ApiStore.getMessageTypeList_url, new HttpListCallback<MessageTypeBean>() {
             @Override
-            public void OnSuccess(List<MessageTypeBean> response) {
-//                messageTypeBeanList.addAll(response);
-//                messageTypeAdapter.notifyDataSetChanged();
+            public void OnSuccess(ArrayList<MessageTypeBean> response) {
+                messageTypeBeanList.addAll(response);
+                messageTypeAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void OnFailure(String message) {
-                Log.e("hahahh", message);
+
             }
 
             @Override
             public void OnRequestStart() {
-
+                kProgressHUD.show();
             }
 
             @Override
             public void OnRequestFinish() {
-
+                kProgressHUD.dismiss();
             }
         });
     }
 
-    private void callHttpForFavoriteMessageTypeList(){
-        HttpClient.get(ApiStore.getFavoriteMessageTypeList_url, new HttpCallback<List<MessageTypeBean>>() {
+    private void callHttpForFavoriteMessageTypeList() {
+        HttpClient.get(ApiStore.getFavoriteMessageTypeList_url, new HttpListCallback<MessageTypeBean>() {
+
             @Override
-            public void OnSuccess(List<MessageTypeBean> response) {
-                Log.i("====",response.size() + " ");
-                for (MessageTypeBean messageTypeBean : response){
-                    System.out.println(messageTypeBean);
-                }
-//                messageTypeBeanList.addAll(response);
-//                messageTypeAdapter.notifyDataSetChanged();
+            public void OnSuccess(ArrayList<MessageTypeBean> response) {
+                messageTypeBeanList.addAll(response);
+                messageTypeAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void OnFailure(String message) {
-                Log.e("hahahh",message);
+
             }
 
             @Override
             public void OnRequestStart() {
-
+                kProgressHUD.show();
             }
 
             @Override
             public void OnRequestFinish() {
-
+                kProgressHUD.dismiss();
             }
         });
     }

@@ -51,4 +51,11 @@
     <string name="port">端口：</string>
     <string name="ipHint">示例：192.168.1.11</string>
     <string name="portHint">示例：8080</string>
+    <string name="vinTitle">车架号：</string>
+    <string name="carTypeTitle">车辆型号：</string>
+    <string name="_4sTitle">所属4S店：</string>
+    <string name="alarmShopTitle">报警商户：</string>
+    <string name="deviceNrTitile">设备编号：</string>
+    <string name="alarmTimeTitle">报警时间：</string>
+    <string name="allRead">全部已读</string>
 </resources>

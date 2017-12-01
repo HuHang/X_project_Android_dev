@@ -104,7 +104,7 @@ public class UITabBarController extends LinearLayout {
             //未选中的颜色
             unSelectColor = attributes.getColor(R.styleable.BottomTabBar_tab_unselected_color, Color.parseColor("#797981"));
             //BottomTabBar的整体背景
-            tabBarBackgroundColor = attributes.getColor(R.styleable.BottomTabBar_tab_bar_background, Color.parseColor("#ebebeb"));
+            tabBarBackgroundColor = attributes.getColor(R.styleable.BottomTabBar_tab_bar_background, Color.parseColor("#faf7f7"));
             //分割线背景
             dividerBackgroundColor = attributes.getColor(R.styleable.BottomTabBar_tab_divider_background, Color.parseColor("#b7b7b7"));
 

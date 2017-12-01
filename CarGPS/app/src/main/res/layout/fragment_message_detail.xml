@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.cztek.concept.cargps.activities.tab_bar_fragment.tab_bar_fragment_2.children.MessageDetailFragment">
+
+    <include layout="@layout/toolbar"/>
+
+    <RadioGroup
+        android:id="@+id/segmentControlRG"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/segmentHeight"
+        android:orientation="horizontal"
+        android:background="@color/viewBackground">
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:button="@null"
+            android:gravity="center"
+            android:background="@drawable/style_segment_radiobtn"
+            android:text="未读消息"
+            android:textColor="@drawable/style_selected_color"/>
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:background="@drawable/style_segment_radiobtn"
+            android:text="已读消息"
+            android:textColor="@drawable/style_selected_color"/>
+
+    </RadioGroup>
+
+    <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/viewForeground"/>
+
+</LinearLayout>

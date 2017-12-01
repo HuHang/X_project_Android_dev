@@ -9,25 +9,64 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/horizontal_margin2"
-        android:paddingBottom="@dimen/horizontal_margin2">
-
-        <ImageView
-            android:id="@+id/typeImageView"
-            android:layout_width="@dimen/itemImageMiddleSize"
-            android:layout_height="@dimen/itemImageMiddleSize"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:id="@+id/nameTextView"
-            android:layout_width="wrap_content"
+        android:paddingTop="@dimen/horizontal_margin1"
+        android:paddingBottom="@dimen/horizontal_margin1"
+        android:paddingRight="@dimen/horizontal_margin1">
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/horizontal_margin1"
-            android:textSize="@dimen/text3"
-            android:textColor="@color/text1"/>
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/typeImageView"
+                android:layout_width="@dimen/itemImageLargeSize"
+                android:layout_height="@dimen/itemImageLargeSize"
+                android:layout_gravity="center"
+                android:padding="@dimen/horizontal_margin1"/>
+
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/horizontal_margin1"
+                android:textSize="@dimen/text3"
+                android:textColor="@color/text1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/isFavoriteTextView"
+                android:layout_width="@dimen/itemImageLargeSize"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text3"
+                android:text="@string/cancel"
+                android:background="@drawable/style_textview_red_border"
+                android:padding="@dimen/item_default_marginTop"
+                android:gravity="center"
+                android:focusable="true"
+                android:clickable="true" />
+            <ImageView
+                android:layout_width="@dimen/itemImageDefaultSize"
+                android:layout_height="@dimen/itemImageDefaultSize"
+                android:layout_gravity="center"
+                android:src="@mipmap/icon_arrow_right_red"
+                android:layout_marginLeft="@dimen/horizontal_margin1"/>
+
+
+        </LinearLayout>
+
 
     </LinearLayout>
+
+
 
 </LinearLayout>

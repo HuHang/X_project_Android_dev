@@ -12,4 +12,6 @@ public class ApiStore {
     public static final String getMessageTypeList_url = "Messages/AlarmMsgTypeCount";
 
     public static final String getFavoriteMessageTypeList_url = "Messages/FavoriteAlarmMsgTypeCount";
+
+    public static final String getMessage_url = "Messages/UnReadAlarmMsgWithPage";
 }

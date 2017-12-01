@@ -1,19 +1,13 @@
 package com.cztek.concept.cargps.activities.splash;
 
-import android.content.Intent;
 import android.os.Handler;
 
-import com.blankj.utilcode.util.EncodeUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.cztek.concept.cargps.R;
 import com.cztek.concept.cargps.activities.login.activity.LoginActivity;
 import com.cztek.concept.cargps.base.BaseAppCompatActivity;
 import com.cztek.concept.cargps.constants.GlobalVariables;
-import com.vondear.rxtools.RxSPTool;
-import com.vondear.rxtools.view.ticker.RxTickerUtils;
-
-import java.util.Arrays;
 
 public class SplashActivity extends BaseAppCompatActivity {
 
@@ -24,8 +18,9 @@ public class SplashActivity extends BaseAppCompatActivity {
 
     @Override
     protected void init() {
-        super.init();
         initSPData();
+        super.init();
+
 
     }
 
@@ -53,8 +48,7 @@ public class SplashActivity extends BaseAppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(intent);
+                startActivityWithoutExtras(LoginActivity.class);
                 finish();
                 overridePendingTransition(R.animator.fade_out,R.animator.fade_in);
             }

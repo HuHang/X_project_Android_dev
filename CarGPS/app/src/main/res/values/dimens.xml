@@ -23,9 +23,11 @@
     <dimen name="pswRadioButtonSize">18dp</dimen>
     <dimen name="pswRadioButtonStroke">2dp</dimen>
 
-    <dimen name="clickItemDefaultHeight">14dp</dimen>
+    <dimen name="itemImageSmallSize">14dp</dimen>
     <dimen name="itemImageDefaultSize">26dp</dimen>
     <dimen name="itemImageMiddleSize">40dp</dimen>
+    <dimen name="itemImageLargeSize">60dp</dimen>
+    <dimen name="swipeMenuWidthMiddle">100dp</dimen>
 
     <dimen name="headerDefaultHeight">140dp</dimen>
 

@@ -8,6 +8,7 @@ import com.cztek.concept.cargps.R;
 import com.cztek.concept.cargps.activities.tab_bar_fragment.tab_bar_fragment_2.bean.MessageTypeBean;
 import com.cztek.concept.cargps.base.adapter.BaseRecyclerViewAdapter;
 import com.cztek.concept.cargps.base.adapter.BaseRecyclerViewHolder;
+import com.cztek.concept.cargps.third.BadgeView;
 
 import java.util.List;
 
@@ -24,9 +25,14 @@ public class MessageTypeAdapter extends BaseRecyclerViewAdapter<MessageTypeBean>
     ImageView typeImageView;
     @BindView(R.id.nameTextView)
     TextView nameTextView;
+    @BindView(R.id.isFavoriteTextView)
+    TextView isFavoriteTextView;
+
+    private Context mContext;
 
     public MessageTypeAdapter(Context context, List<MessageTypeBean> datas) {
         super(context, datas);
+        this.mContext = context;
     }
 
     @Override
@@ -37,7 +43,9 @@ public class MessageTypeAdapter extends BaseRecyclerViewAdapter<MessageTypeBean>
     @Override
     protected void covert(BaseRecyclerViewHolder holder, MessageTypeBean data, int position) {
         ButterKnife.bind(this, holder.getView());
+        BadgeView.newBadgeView(mContext,typeImageView,data.getCount());
         nameTextView.setText(data.getKeyStr());
+        isFavoriteTextView.setText(data.getIsFavorite() ? "取消" : "订阅");
         switch (data.getKeyValue()) {
             case 14:
             case 2:
@@ -81,4 +89,6 @@ public class MessageTypeAdapter extends BaseRecyclerViewAdapter<MessageTypeBean>
         }
 
     }
+
+
 }

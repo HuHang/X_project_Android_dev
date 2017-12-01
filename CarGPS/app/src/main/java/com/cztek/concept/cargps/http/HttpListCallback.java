@@ -1,17 +1,23 @@
 package com.cztek.concept.cargps.http;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.tamic.novate.Throwable;
 import com.tamic.novate.callback.RxStringCallback;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
 
 /**
- * Created by charlot
- * Date: 2017/11/30.
+ * Created by HH
+ * Date: 2017/12/1
  */
 
-public abstract class HttpCallback<T> extends RxStringCallback {
+public abstract class HttpListCallback<T> extends RxStringCallback {
+
+
     @Override
     public void onStart(Object tag) {
         super.onStart(tag);
@@ -39,7 +45,7 @@ public abstract class HttpCallback<T> extends RxStringCallback {
         OnFailure(e.getMessage());
     }
 
-    public abstract void OnSuccess(T response);
+    public abstract void OnSuccess(ArrayList<T> response);
 
     public abstract void OnFailure(String message);
 
@@ -48,19 +54,22 @@ public abstract class HttpCallback<T> extends RxStringCallback {
     public abstract void OnRequestFinish();
 
 
-    private T transform(String response) {
-        T dataResponse = null;
+    private ArrayList<T> transform(String response) {
+        ArrayList<T> mList = new ArrayList<>();
         Class<T> entityClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+        Gson gson = new Gson();
         try {
-            if (response.charAt(0) == '{'){
-                dataResponse = new Gson().fromJson(response, entityClass);
+            if (response.charAt(0) == '[') {
+                JsonArray array = new JsonParser().parse(response).getAsJsonArray();
+                for (final JsonElement elem : array) {
+                    mList.add(gson.fromJson(elem, entityClass));
+                }
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return dataResponse;
+        return mList;
 
     }
-
 }
