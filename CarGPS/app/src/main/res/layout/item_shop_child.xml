@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="@dimen/item_smallHeight"
+    android:background="@color/viewBackground"
+    android:paddingTop="@dimen/item_default_marginTop"
+    android:paddingBottom="@dimen/item_default_marginTop">
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/horizontal_margin5">
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text4"
+            android:textColor="@color/text2"
+            android:ellipsize="middle"
+            android:singleLine="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/item_default_marginTop"
+            tools:ignore="UseCompoundDrawables">
+            <ImageView
+                android:layout_width="@dimen/itemImageSmallSize"
+                android:layout_height="@dimen/itemImageSmallSize"
+                android:src="@mipmap/icon_bank"
+                android:layout_gravity="center" />
+            <TextView
+                android:id="@+id/bankTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/item_default_marginTop"
+                android:textSize="@dimen/text5"
+                android:textColor="@color/text3"
+                android:maxLines="2"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/item_default_marginTop">
+            <ImageView
+                android:layout_width="@dimen/itemImageSmallSize"
+                android:layout_height="@dimen/itemImageSmallSize"
+                android:src="@mipmap/icon_address"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/addressTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text5"
+                android:layout_marginLeft="@dimen/item_default_marginTop"
+                android:textColor="@color/text3"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/selecterLinearLayout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/selecterImageView"
+            android:layout_width="@dimen/itemImageDefaultSize"
+            android:layout_height="@dimen/itemImageDefaultSize"
+            android:padding="@dimen/item_default_marginTop"
+            android:src="@mipmap/icon_select_red"/>
+
+    </LinearLayout>
+
+</LinearLayout>

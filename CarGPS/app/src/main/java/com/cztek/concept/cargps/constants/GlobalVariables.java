@@ -21,4 +21,6 @@ public class GlobalVariables {
     public final static String userID = "userID";
     public final static String userName = "userName";
     public final static String userPhone = "userPhone";
+    public final static String defaultShopIdList = "defaultShopIdList";
+    public final static String selectShopName = "selectShopName";
 }

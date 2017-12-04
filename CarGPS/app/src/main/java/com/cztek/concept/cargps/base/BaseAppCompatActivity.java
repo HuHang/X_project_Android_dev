@@ -19,14 +19,13 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity{
 
     private String mToolbarTitle;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         init();
         setContentView(setLayoutResourceId());
         setUpView();
-        setUpData();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 //        ViewGroup contentFrameLayout = findViewById(android.R.id.content);
 //        View parentView = contentFrameLayout.getChildAt(0);
@@ -34,6 +33,12 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity{
 //            parentView.setFitsSystemWindows(true);
 //        }
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setUpData();
 
     }
 
@@ -83,4 +88,6 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity{
     public String getMTitle(){
         return mToolbarTitle;
     }
+
+
 }

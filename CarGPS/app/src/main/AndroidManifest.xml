@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:name=".base.BaseApplication"
@@ -17,6 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="f7fcb3d34b88d311dc9aec9b5dcc8b24"/>
         <activity
             android:name=".activities.splash.SplashActivity"
             android:screenOrientation="portrait"
@@ -30,7 +34,8 @@
         <activity android:name=".activities.login.activity.LoginActivity" />
         <activity android:name=".activities.tab_bar_fragment.MainActivity" />
         <activity android:name=".activities.tab_bar_fragment.tab_bar_fragment_2.children.MessageDetailActivity" />
-        <activity android:name=".activities.shop.ShopActivity"></activity>
+        <activity android:name=".activities.shop.ShopActivity" />
+        <activity android:name=".activities.tab_bar_fragment.tab_bar_fragment_1.children.MonitorActivity"></activity>
     </application>
 
 </manifest>

@@ -3,17 +3,18 @@ package com.cztek.concept.cargps.activities.tab_bar_fragment.tab_bar_fragment_1.
 
 import android.content.Intent;
 import android.content.res.Resources;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.SPUtils;
+import com.blankj.utilcode.util.StringUtils;
 import com.cztek.concept.cargps.R;
 import com.cztek.concept.cargps.activities.shop.ShopActivity;
+import com.cztek.concept.cargps.activities.tab_bar_fragment.tab_bar_fragment_1.children.MonitorActivity;
 import com.cztek.concept.cargps.base.BaseFragment;
+import com.cztek.concept.cargps.constants.GlobalVariables;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 
 import butterknife.BindView;
@@ -57,7 +58,8 @@ public class HomeFragment extends BaseFragment {
         unbinder = ButterKnife.bind(this, getContentView());
         res = getMContext().getResources();
         toolbarLogo.setImageResource(R.mipmap.icon_toshop_white);
-        toolbarTitle.setText("安阳绅之星实业有限公司");
+        toolbarTitle.setText("");
+
     }
 
     @Override
@@ -68,8 +70,20 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected void setUpData() {
         super.setUpData();
+        if (SPUtils.getInstance(GlobalVariables.infoSp).getStringSet(GlobalVariables.defaultShopIdList).isEmpty()){
+            Intent intent = new Intent();
+            intent.setClass(getMContext(), ShopActivity.class);
+            startActivity(intent);
+        }
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!StringUtils.isEmpty(SPUtils.getInstance(GlobalVariables.infoSp).getString(GlobalVariables.selectShopName))){
+            toolbarTitle.setText(SPUtils.getInstance(GlobalVariables.infoSp).getString(GlobalVariables.selectShopName));
+        }
+    }
 
     @Override
     public void onDestroyView() {
@@ -79,13 +93,15 @@ public class HomeFragment extends BaseFragment {
 
     @OnClick({R.id.toolbar_title,R.id.toMonitorImageView, R.id.toCarImageView, R.id.toDeviceImageView})
     public void onViewClicked(View view) {
+        Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.toolbar_title:
-                Intent intent = new Intent();
                 intent.setClass(getMContext(), ShopActivity.class);
                 startActivity(intent);
                 break;
             case R.id.toMonitorImageView:
+                intent.setClass(getMContext(), MonitorActivity.class);
+                startActivity(intent);
                 break;
             case R.id.toCarImageView:
                 break;

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="@dimen/item_defaultHeight2"
+    android:paddingTop="@dimen/horizontal_margin1"
+    android:paddingBottom="@dimen/horizontal_margin1"
+    android:descendantFocusability="blocksDescendants"
+    android:background="@color/viewForeground">
+    
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/expandedImageView"
+            android:layout_width="@dimen/itemImageSmallSize"
+            android:layout_height="@dimen/itemImageSmallSize"
+            android:src="@mipmap/icon_arrow_right_red"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text3"
+            android:textColor="@color/text2"
+            android:ellipsize="middle"
+            android:singleLine="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/item_default_marginTop">
+            <ImageView
+                android:layout_width="@dimen/itemImageSmallSize"
+                android:layout_height="@dimen/itemImageSmallSize"
+                android:src="@mipmap/icon_bank"
+                android:layout_gravity="center" />
+            <TextView
+                android:id="@+id/bankTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text5"
+                android:textColor="@color/text3"
+                android:layout_marginLeft="@dimen/item_default_marginTop"
+                android:text="1234456"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/item_default_marginTop">
+            <ImageView
+                android:layout_width="@dimen/itemImageSmallSize"
+                android:layout_height="@dimen/itemImageSmallSize"
+                android:src="@mipmap/icon_address"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/addressTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text5"
+                android:textColor="@color/text3"
+                android:layout_marginLeft="@dimen/item_default_marginTop"
+                android:maxLines="2"
+                android:text="1234456"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/selecterLinearLayout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/selecterImageView"
+            android:layout_width="@dimen/itemImageDefaultSize"
+            android:layout_height="@dimen/itemImageDefaultSize"
+            android:src="@mipmap/icon_select_red"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -30,6 +30,7 @@
                 android:id="@+id/toolbar_leftTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text3"
@@ -45,6 +46,7 @@
                 android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text1"
@@ -69,6 +71,7 @@
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text3"
+                android:gravity="center"
                 android:layout_marginLeft="@dimen/horizontal_margin1"/>
         </LinearLayout>
     </LinearLayout>

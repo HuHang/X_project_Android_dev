@@ -15,6 +15,8 @@
 
     <dimen name="segmentHeight">44dp</dimen>
     <dimen name="item_defaultHeight">90dp</dimen>
+    <dimen name="item_smallHeight">70dp</dimen>
+    <dimen name="item_defaultHeight2">100dp</dimen>
 
     <dimen name="button_defaultHeight">44dp</dimen>
     <dimen name="button_smallHeight">36dp</dimen>

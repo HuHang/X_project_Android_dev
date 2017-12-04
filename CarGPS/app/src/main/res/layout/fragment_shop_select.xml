@@ -7,4 +7,10 @@
 
     <include layout="@layout/toolbar_navigation"/>
 
+    <ExpandableListView
+        android:id="@+id/expandableListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/viewBackground"/>
+
 </LinearLayout>

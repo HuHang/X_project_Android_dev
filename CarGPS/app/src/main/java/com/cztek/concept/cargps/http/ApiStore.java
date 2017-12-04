@@ -14,4 +14,9 @@ public class ApiStore {
     public static final String getFavoriteMessageTypeList_url = "Messages/FavoriteAlarmMsgTypeCount";
 
     public static final String getMessage_url = "Messages/UnReadAlarmMsgWithPage";
+
+    public static final String getAllShop_url = "Shops/GetAllWithChild";
+
+    public static final String getMonitorData_url = "shops/GetBindedGroupByShopsWithListWithLimit";
+
 }
